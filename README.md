@@ -12,6 +12,8 @@ This tool should be installed in the Ansible repository associated with a WordPr
 
 Since this tool is based on Docker Compose, you must concatenate the path to its `docker-compose.yml` file within the `COMPOSE_FILE` variable in the `.env` file for your project. This must come after the `docker-compose.yml` file for the project itself in the `COMPOSE_FILE` paths.
 
+The image for this tool is built from the `varilink/tools/bconsole` image that is created by the Varilink [Tools - Bacula](https://github.com/varilink/tools_bconsole) repository. So, one must clone and build from this repository before using this tool and importantly, configure [Tools - Bacula](https://github.com/varilink/tools_bconsole) with the correct details within its `bconsole.conf` file for your environment.
+
 # Usage
 
 Make sure that there is nothing in `/tmp/bacula-restores/wp-sites/` on the *hub* host for the WordPress site that you're restoring from left over from a previous restore before you use this tool. This is to ensure that you don't end up with a merge of multiple restores in there. The simplest way is to remove the restored files each time immediately after you have used them, which the Varilink [Tools - WordPress Make Backup](git@github.com:varilink/tools_wordpress-make-backup.git) tool does automatically.
