@@ -28,6 +28,8 @@ The tool will prompt you twice for user inputs as follows:
 
 1. To select the subdomain of the site that you want to restore from a list that the tool derives from the Ansible variables in `host_vars/` for your project.
 
-2. To select the last JOBID from a list that the tool will output to ensure that you get the latest database backup taken for the site.
+2. To select the last JOBID from a list that the tool will output to ensure that you get the latest database backup taken for the site - see [issue #1](https://github.com/varilink/tools_wordpress-restore/issues/1) for this repository.
+
+Note that the restore of the WordPress files may include files that have subsequently been deleted on the host - see [issue #2](https://github.com/varilink/tools_wordpress-restore/issues/2) for this repository.
 
 The tool submits restore jobs that will write the restored files to `/tmp/bacula-restores/wp-sites/$FQDN` on the *hub* host, where `$FQDN` corresponds to the WordPress site restored.
